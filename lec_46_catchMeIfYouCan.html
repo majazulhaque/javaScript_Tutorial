@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Catch Me</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+      }
+      h1 {
+        text-align: center;
+        color: green;
+        font-size: 40px;
+        text-decoration: underline dotted green 10px;
+      }
+      #container {
+        width: 80vw;
+        height: 70vh;
+        margin-left: auto;
+        margin-right: auto;
+        border: 20px ridge green;
+        /* margin: 6vh; */
+      }
+      #catchMe {
+        position: relative;
+        width: 120px;
+        height: 100px;
+        top: 10px;
+        left: 50px;
+        background: radial-gradient(rgb(20, 204, 75) 10%, green);
+        text-align: center;
+        line-height: 90px;
+        font-weight: bold;
+        font-size: 20px;
+        border-radius: 10px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>!!! Catch Me If You Can !!!</h1>
+    <div id="container">
+      <div id="catchMe">Catch Me</div>
+    </div>
+
+    <script>
+      var catchMe = document.getElementById("catchMe");
+      var container = document.getElementById("container");
+
+      var containerWidth = parseInt(getComputedStyle(container).width);
+      var containerHeight = parseInt(getComputedStyle(container).height);
+      var catchMeWidth = parseInt(getComputedStyle(catchMe).width);
+      var catchMeHeight = parseInt(getComputedStyle(catchMe).height);
+
+      var maxWidth = containerWidth - catchMeWidth;
+      var maxHeight = containerHeight - catchMeHeight;
+
+      function initialize() {
+        catchMe.style.top = Math.floor(Math.random() * maxHeight) + "px";
+        catchMe.style.left = Math.floor(Math.random() * maxWidth) + "px";
+      }
+      initialize();
+
+      catchMe.addEventListener("mousemove", changePosition);
+
+      function changePosition() {
+        catchMe.style.top = Math.floor(Math.random() * maxHeight) + "px";
+        catchMe.style.left = Math.floor(Math.random() * maxWidth) + "px";
+      }
+    </script>
+  </body>
+</html>

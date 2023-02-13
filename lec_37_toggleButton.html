@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Toggle Mode</title>
+    <style>
+      body {
+        font-family: sans-serif;
+      }
+      #toggleBtn {
+        width: 10%;
+        height: 10%;
+        background-color: white;
+        border: 2px solid black;
+        border-radius: 20px;
+        margin-left: auto;
+        margin-right: 20px;
+        margin-top: 10px;
+      }
+      #btn {
+        width: 2rem;
+        height: 2rem;
+        border: 1.2px solid black;
+        border-radius: 20px;
+        background-size: contain;
+        background-color: black;
+        background-size: cover;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="toggleBtn">
+      <div id="btn"></div>
+    </div>
+    <script>
+      var toogleDiv = document.getElementById("toggleBtn");
+      var btnDiv = document.getElementById("btn");
+      var flag = false;
+      function darkmode() {
+        if (flag === false) {
+          document.body.style.backgroundColor = "black";
+          btnDiv.style.marginLeft = "auto";
+          flag = true;
+        } else {
+          document.body.style.backgroundColor = "white";
+          btnDiv.style.marginLeft = "0px";
+          flag = false;
+        }
+      }
+      btnDiv.addEventListener("click", darkmode);
+    </script>
+  </body>
+</html>

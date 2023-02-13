@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Dom Assignment</title>
+    <style>
+      body {
+        font-family: sans-serif;
+      }
+      #app {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin-left: auto;
+        margin-right: auto;
+        align-items: center;
+        margin-top: 100px;
+        width: 60%;
+        height: 70%;
+      }
+      #app button {
+        margin-top: 20px;
+        width: 40%;
+        padding: 6px;
+        font-size: 1.2rem;
+        border-radius: 15px;
+      }
+      #circle {
+        width: 15rem;
+        height: 15rem;
+        background-color: blue;
+        border-radius: 50%;
+      }
+      #box {
+        width: 50%;
+        height: 50%;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 25%;
+        background-color: green;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="app">
+      <div id="circle">
+        <div id="box"></div>
+      </div>
+      <button id="button1">Change Color</button>
+      <button id="button2">Change Shape</button>
+    </div>
+
+    <script>
+      var colorCount = 1;
+      var shapeCount = 1;
+      var circleDiv = document.getElementById("circle");
+      var boxDiv = document.getElementById("box");
+      var buttonEvent1 = document.getElementById("button1");
+      var buttonEvent2 = document.getElementById("button2");
+      function changeColor() {
+        if (colorCount === 1) {
+          circleDiv.style.backgroundColor = "red";
+          colorCount++;
+        } else if (colorCount === 2) {
+          circleDiv.style.backgroundColor = "cyan";
+          colorCount++;
+        } else {
+          circleDiv.style.backgroundColor = "blue";
+          colorCount = 1;
+        }
+      }
+      function changeShape() {
+        if (shapeCount === 1) {
+          boxDiv.style.borderRadius = "50%";
+          shapeCount++;
+        } else if (shapeCount === 2) {
+          boxDiv.style.borderRadius = "10px 80px 10px 80px";
+          shapeCount++;
+        } else {
+          boxDiv.style.borderRadius = "0px 0px 0px 0px";
+          shapeCount = 1;
+        }
+      }
+
+      buttonEvent1.addEventListener("click", changeColor);
+      buttonEvent2.addEventListener("click", changeShape);
+    </script>
+  </body>
+</html>

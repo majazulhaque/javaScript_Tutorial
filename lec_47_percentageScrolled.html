@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Gallery</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+      }
+      .percentage {
+        display: flex;
+        position: fixed;
+        flex-direction: row;
+        justify-content: center;
+        width: 25%;
+        padding-top: 10px;
+        border-radius: 25px;
+        background-color: white;
+        height: 2rem;
+        right: 10px;
+        margin-right: 20px;
+        margin-top: 15px;
+        box-shadow: 0px 0px 10px 6px rgb(189, 181, 181);
+      }
+      .percentage span {
+        font-size: 1.5rem;
+        color: green;
+        font-weight: 550;
+      }
+      #para {
+        text-align: justify;
+        font-size: 20px;
+        margin-top: 20px;
+        padding: 10px 80px;
+      }
+      h1 {
+        text-align: center;
+        font-size: 2rem;
+        color: rgb(51, 151, 218);
+      }
+      .image-section {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        margin: 10px 30px;
+        justify-content: space-around;
+      }
+      .image-section img {
+        width: 400px;
+        padding: 20px 40px;
+        margin-left: 30px;
+        margin-right: 30px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="percentage">
+      <span id="percentage-val">0</span>
+      <span>%</span>
+      <span>&nbsp;Viewed</span>
+    </div>
+    <div id="para">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates quidem
+      ipsum possimus illo saepe harum deleniti voluptatum officiis, alias minus
+      dignissimos cumque est. Temporibus neque, eaque quo quod excepturi iure!
+      This template provides advanced gallery building functionality (fine-tuned
+      formatting control). For creating generic galleries, use the Gallery tag.
+      This template displays a gallery of images in an array, left-to-right in
+      rows. Global parameters |width= and |height= control the size of all
+      images in the gallery. The number of images per row is based upon the
+      image width parameters and the width of the screen. The number of images
+      per row can change when the user resizes the window.
+    </div>
+    <div class="container">
+      <h1>Image Gallery</h1>
+      <div class="image-section">
+        <img
+          src="https://ninjasfiles.s3.amazonaws.com/asset_0000000000000025_1550237330_codezen_2.png"
+        />
+        <img
+          src="https://ninjasfiles.s3.amazonaws.com/asset_0000000000000026_1550237353_project_2.jpeg"
+        />
+        <img
+          src="https://ninjasfiles.s3.amazonaws.com/asset_0000000000000025_1550237330_codezen_2.png"
+        />
+        <img
+          src="https://ninjasfiles.s3.amazonaws.com/asset_0000000000000026_1550237353_project_2.jpeg"
+        />
+        <img
+          src="https://ninjasfiles.s3.amazonaws.com/asset_0000000000000025_1550237330_codezen_2.png"
+        />
+        <img
+          src="https://ninjasfiles.s3.amazonaws.com/asset_0000000000000026_1550237353_project_2.jpeg"
+        />
+        <img
+          src="https://ninjasfiles.s3.amazonaws.com/asset_0000000000000025_1550237330_codezen_2.png"
+        />
+        <img
+          src="https://ninjasfiles.s3.amazonaws.com/asset_0000000000000026_1550237353_project_2.jpeg"
+        />
+        <img
+          src="https://ninjasfiles.s3.amazonaws.com/asset_0000000000000025_1550237330_codezen_2.png"
+        />
+        <img
+          src="https://ninjasfiles.s3.amazonaws.com/asset_0000000000000026_1550237353_project_2.jpeg"
+        />
+        <img
+          src="https://ninjasfiles.s3.amazonaws.com/asset_0000000000000025_1550237330_codezen_2.png"
+        />
+        <img
+          src="https://ninjasfiles.s3.amazonaws.com/asset_0000000000000026_1550237353_project_2.jpeg"
+        />
+      </div>
+    </div>
+    <!-- <section id="portfolio">
+        <div id="portfolio-container">
+            <div class="portfolio-image-container">
+                <img src="https://ninjasfiles.s3.amazonaws.com/asset_0000000000000025_1550237330_codezen_2.png">
+                <div class="portfolio-details">
+                    <p>
+                        Write here basic details about the project.
+                    </p>
+                </div>
+            </div>
+            <div class="portfolio-image-container">
+                <img src="https://ninjasfiles.s3.amazonaws.com/asset_0000000000000026_1550237353_project_2.jpeg">
+                <div class="portfolio-details">
+                    <p>
+                        Write here basic details about the project.
+                    </p>
+                </div>
+            </div>
+            <div class="portfolio-image-container">
+                <img src="https://ninjasfiles.s3.amazonaws.com/asset_0000000000000029_1550237386_project.jpeg">
+                <div class="portfolio-details">
+                    <p>
+                        Write here basic details about the project.
+                    </p>
+                </div>
+            </div>
+            <div class="portfolio-image-container">
+                <img src="https://ninjasfiles.s3.amazonaws.com/asset_0000000000000027_1550237355_project_3.png">
+                <div class="portfolio-details">
+                    <p>
+                        Write here basic details about the project.
+                    </p>
+                </div>
+            </div>
+            <div class="portfolio-image-container">
+                <img src="https://ninjasfiles.s3.amazonaws.com/asset_0000000000000024_1550237299_codezen.png">
+                <div class="portfolio-details">
+                    <p>
+                        Write here basic details about the project.
+                    </p>
+                </div>
+            </div>
+            <div class="portfolio-image-container">
+                <img src="https://ninjasfiles.s3.amazonaws.com/asset_0000000000000028_1550237365_tree.jpeg">
+                <div class="portfolio-details">
+                    <p>
+                        Write here basic details about the project.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section> -->
+
+    <script>
+      var percentageVal = document.getElementById("percentage-val");
+
+      window.addEventListener("scroll", getPercentage);
+
+      function getPercentage() {
+        var val = parseInt(
+          ((document.documentElement.scrollTop + document.body.scrollTop) /
+            (document.documentElement.scrollHeight -
+              document.documentElement.clientHeight)) *
+            100
+        );
+        percentageVal.innerText = val;
+      }
+    </script>
+  </body>
+</html>

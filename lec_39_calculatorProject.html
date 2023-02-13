@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Calculator Project</title>
+    <meta charset="UTF-8" />
+    <style>
+        body {
+  font-family: Arial (sans-serif);
+}
+#calculator {
+  width: 40%;
+  height: 80%;
+  background-color: rgb(226, 217, 217);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 1%;
+  justify-content: space-between;
+  text-align: center;
+}
+#name {
+  width: 100%;
+  background-color: black;
+  color: white;
+  font-size: 1.7rem;
+  padding: 2%;
+  text-align: center;
+  text-transform: uppercase;
+}
+#display-container {
+  width: 100%;
+  height: 6rem;
+  border-radius: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: white;
+}
+#display {
+  direction: ltr;
+  font-size: 2rem;
+  color: black;
+  font-weight: bold;
+  margin-right: 10px;
+  letter-spacing: 1px;
+  text-align: right;
+}
+.button {
+  background-image: linear-gradient(to right, #93bba0 0%, #b8b38d 51%);
+  width: 24%;
+  height: 4rem;
+  background-color: white;
+  font-size: 2rem;
+  margin-right: 0.5%;
+  margin-left: 0.5%;
+  margin-top: 1%;
+}
+
+.red {
+  background-image: linear-gradient(
+    to right,
+    #e52d27 0%,
+    #b31217 51%,
+    #e52d27 100%
+  );
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  box-shadow: 0 0 20px #eee;
+}
+
+.yellow {
+  background-image: linear-gradient(
+    to right,
+    #f09819 0%,
+    #edde5d 51%,
+    #f09819 100%
+  );
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  box-shadow: 0 0 20px #eee;
+}
+.yellow:hover {
+  background-position: right center;
+}
+
+
+    </style>
+  </head>
+
+  <body>
+    <div id="calculator">
+      <h1 id="name">Calculator</h1>
+      <div id="display-container">
+        <p id="display"></p>
+      </div>
+      <div class="button yellow" data-value="AC">
+        <span>AC</span>
+      </div>
+      <div class="button" data-value="+/-">
+        <span>+/-</span>
+      </div>
+      <div class="button" data-value="%">
+        <span>%</span>
+      </div>
+      <div class="button red" data-value="/">
+        <span>/</span>
+      </div>
+      <div class="button" data-value="7">
+        <span>7</span>
+      </div>
+      <div class="button" data-value="8">
+        <span>8</span>
+      </div>
+      <div class="button" data-value="9">
+        <span>9</span>
+      </div>
+      <div class="button red" data-value="*">
+        <span>*</span>
+      </div>
+      <div class="button" data-value="4">
+        <span>4</span>
+      </div>
+      <div class="button" data-value="5">
+        <span>5</span>
+      </div>
+      <div class="button" data-value="6">
+        <span>6</span>
+      </div>
+      <div class="button red" data-value="-">
+        <span>-</span>
+      </div>
+      <div class="button" data-value="1">
+        <span>1</span>
+      </div>
+      <div class="button" data-value="2">
+        <span>2</span>
+      </div>
+      <div class="button" data-value="3">
+        <span>3</span>
+      </div>
+      <div class="button red" data-value="+">
+        <span>+</span>
+      </div>
+      <div style="width: 49%;" class="button" data-value="0">
+        <span>0</span>
+      </div>
+      <div class="button" data-value=".">
+        <span>.</span>
+      </div>
+      <div class="button red" data-value="=">
+        <span>=</span>
+      </div>
+    </div>
+
+    <script>
+var buttons = document.getElementsByClassName("button");
+var displays = document.getElementById("display");
+var operant1 = 0;
+var operant2 = null;
+var operator = null;
+for (var i = 0; i < buttons.length; i++) {
+  var num = "";
+  buttons[i].addEventListener("click", function () {
+    var value = this.getAttribute("data-value");
+    if (displays.innerText.length > 10) {
+      displays.style.color = "black";
+      displays.innerText = "";
+    }
+    displays.style.fontSize = "2rem";
+    if (value === "+/-") {
+      displays.style.fontSize = "10px";
+      displays.style.color = "red";
+      displays.innerText =
+        "This key is under implementation,Please CLICK on 'AC' button to continue...";
+    } else if (
+      value === "+" ||
+      value === "-" ||
+      value === "*" ||
+      value === "/" ||
+      value === "%"
+    ) {
+      operator = value;
+      displays.innerText += value;
+      // operant1 = parseFloat(displays.textContent);
+      operant1 = num;
+      num = "";
+      console.log(operant1);
+    } else if (value === "AC") {
+      displays.innerText = "";
+      operant1 = 0;
+      operant2 = 0;
+      num = "";
+    } else if (value === "=") {
+      // operant2 = parseFloat(displays.textContent);
+      operant2 = num;
+      num = "";
+      console.log(operant1, operator, operant2);
+      switch (operator) {
+        case "-":
+          num = operant1 - operant2;
+          break;
+        case "+":
+          num = parseInt(operant1, 0) + parseInt(operant2, 0);
+          break;
+        case "*":
+          num = operant1 * operant2;
+          break;
+        case "/":
+          num = operant1 / operant2;
+          break;
+        case "%":
+          num = operant1 % operant2;
+          break;
+        default:
+          num = 0;
+      }
+      displays.innerText = num;
+      operant1 = num;
+    } else {
+      // displays.innerText += value;
+      num += value;
+      displays.innerText += value;
+    }
+  });
+}
+
+    </script>
+  </body>
+</html>
